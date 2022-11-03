@@ -24,7 +24,7 @@ function FormResetPass() {
                 width: '40%'
             }}
             >
-                <p class="text-start m-2">Reset password</p>
+                <p className="text-start m-2">Reset password</p>
                 <Form.Control
                     name='oldpass'
                     value={input.oldpass}

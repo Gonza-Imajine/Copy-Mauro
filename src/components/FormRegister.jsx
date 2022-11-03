@@ -3,6 +3,7 @@ import { Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+
 function FormRegister() {
     const [input, setInput] = useState({
         firstname: '',

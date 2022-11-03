@@ -23,7 +23,7 @@ function FormLogin() {
                 width: '40%'
             }}
             >
-                <p class="text-start m-2">Login</p>
+                <p className="text-start m-2">Login</p>
                 <Form.Control
                     name='email'
                     value={input.email}

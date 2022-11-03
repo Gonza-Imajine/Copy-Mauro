@@ -1,4 +1,5 @@
-import FormLogin from "../components/FormLogin";
+/* import FormLogin from "../components/FormLogin"; */
+import FormikLog from "../components/FormikLog"
 import Layout from "../components/Layout";
 
 function Login() {
@@ -6,7 +7,8 @@ function Login() {
 
     return (
         <Layout>
-            <FormLogin></FormLogin>
+            {/* <FormLogin></FormLogin> */}
+            <FormikLog></FormikLog>
         </Layout>
     );
 }
