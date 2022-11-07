@@ -38,7 +38,7 @@ const FormikRegister = () =>{
                 /^.*(?=.{8,})((?=.*[!@#$%^&*()\-_=+{};:,<.>]){1})(?=.*\d)((?=.*[a-z]){1})((?=.*[A-Z]){1}).*$/,
                 "La contraseña debe contener al menos una mayuscula, una minuscula, un numero, un caracter especial y debe ser contener al menos 8 caracteres"
               ),
-            phone: yup.string().required("Este campo es Obligatorio").matches(/^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/, "El telefono no posee covertura en Argentina")
+            phone: yup.string().required("Este campo es Obligatorio").matches(/^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/, "El telefono no p osee covertura en Argentina")
         })}>
             {({
                 values, /* Valores que seran pasados a el componente input mas abajo */

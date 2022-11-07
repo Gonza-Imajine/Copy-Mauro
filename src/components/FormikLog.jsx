@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
 import * as yup from 'yup';
@@ -8,6 +8,11 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 const FormikLog = () =>{
+    const [ user, setUser] = useState("");
+    const [ error, setError] = useState("");
+    const [ token, setToken] = useState("");
+    
+
     const initialValues = {
         name: "",
         email: "",
@@ -20,11 +25,20 @@ const FormikLog = () =>{
         });
         console.log(response.data);
     }; */
-
-    const onSubmit = async () => { await axios.get("http://localhost:8080/api/users").then(response => {
-        console.log(response);
-      })
-  }
+/* 
+    const onSubmit = async (values) => { 
+        try{
+            const res = await axios.post("http://localhost:8080/api/sign-in", values);
+            const {
+                data: {
+                    data: { token },
+                },
+            } = res;
+            setToken(token);
+      }catch({message}){
+        setError(message);
+      }
+  } */
 
     const navigate = useNavigate();
 
