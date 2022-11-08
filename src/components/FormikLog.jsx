@@ -17,28 +17,20 @@ const FormikLog = () =>{
         name: "",
         email: "",
     };
-   /*  const onSubmit = async (values) => {
-        const response = await axios({
-            method: 'POST',
-            url: 'http://localhost:8080/api/users',
-            data: { ...values },
-        });
-        console.log(response.data);
-    }; */
-/* 
+   
     const onSubmit = async (values) => { 
         try{
-            const res = await axios.post("http://localhost:8080/api/sign-in", values);
-            const {
-                data: {
-                    data: { token },
-                },
-            } = res;
-            setToken(token);
+            const res = await axios.post("http://localhost:8080/api/auth/sign-in", values);
+            const { data } = res.data;
+            setUser(data.user)
+            setToken(data.token);
+            navigate('/home');
+            /* debemos guardar el token en algun lado, para posteriormente usarlo en un get y obtener el user */
+            console.log(user, token)
       }catch({message}){
         setError(message);
       }
-  } */
+  }
 
     const navigate = useNavigate();
 
@@ -83,7 +75,6 @@ const FormikLog = () =>{
                         console.log({
                             initialValues
                         });
-                        navigate('/home') 
                     }}
                     style={{
                         width: '80%',
@@ -95,6 +86,11 @@ const FormikLog = () =>{
                     Log in
                 </Button>
                 </div>
+                {error ? (
+                                <div className='alert alert-danger' role='alert'>
+                                    {error}
+                                </div>
+                            ) : null}
                         </Form>
                     </div>
                 );

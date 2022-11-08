@@ -17,11 +17,7 @@ const FormikRegister = () =>{
     };
     const navigate = useNavigate();
     const onSubmit = async (values) => {
-        const response = await axios({
-            method: 'POST',
-            url: 'http://localhost:8080/api/users',
-            data: { ...values },
-        });
+        const response = await axios.post("http://localhost:8080/api/auth/sign-up", values);
         console.log(response.data);
     };
 
@@ -64,6 +60,7 @@ const FormikRegister = () =>{
                             <Input name={"firstname"} value={values.firstname} error={errors.firstname} placeholder={"Firstname"} onChange={handleChange}/>
                             <Input name={"lastname"} value={values.lastname} error={errors.lastname} placeholder={"Lastname"} onChange={handleChange}/>
                             <Input name={"phone"} value={values.phone} error={errors.phone} placeholder={"Phone"} onChange={handleChange}/>
+                            <Input name={"password"} type="password" value={values.password} error={errors.lastname} placeholder={"Password"} onChange={handleChange}/>
                             <div className='d-flex flex-column align-items-center'>
                 <Link to='/login' className="mt-3 mb-2">Sign in</Link>
                 <Link to='/recover_password' className="mb-3">Forgot my password</Link>
