@@ -14,8 +14,8 @@ const FormikLog = () =>{
     
 
     const initialValues = {
-        name: "",
         email: "",
+        password: ""
     };
    
     const onSubmit = async (values) => { 
@@ -64,7 +64,7 @@ const FormikLog = () =>{
                         }}>
                             <p className="text-start m-2">Login</p>
                             <Input name={"email"} value={values.email} error={errors.email} placeholder={"Email"} onChange={handleChange}/>
-                            <Input name={"name"} value={values.name} error={errors.name} placeholder={"Name"} onChange={handleChange}/>
+                            <Input name={"password"} type="password" value={values.password} error={errors.password} placeholder={"Password"} onChange={handleChange}/>
                             <div className='d-flex flex-column align-items-center'>
                 <Link to='/' className="mt-3 mb-2">Sign up</Link>
                 <Link to='/recover_password' className="mb-3">Forgot my password</Link>
