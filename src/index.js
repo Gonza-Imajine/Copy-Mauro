@@ -5,11 +5,19 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 
+import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/lib/integration/react';
+import { store, persistor } from './redux/store/index';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <Router>
-            <App />
-        </Router>
+        <Provider store={store}>
+            <PersistGate persistor={persistor}>
+                <Router>
+                    <App />
+                </Router>
+            </PersistGate>
+        </Provider>
     </React.StrictMode>,
 );
